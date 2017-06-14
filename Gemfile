@@ -25,6 +25,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'twitter-bootstrap-rails'
+gem 'devise-bootstrap-views'
 
 
 gem 'cancancan', '~> 1.10'

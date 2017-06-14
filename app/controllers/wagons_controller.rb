@@ -1,5 +1,6 @@
 class WagonsController < ApplicationController
   before_action :set_wagon, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /wagons
   def index

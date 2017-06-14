@@ -1,5 +1,6 @@
 class StationsController < ApplicationController
   before_action :set_station, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /stations
   def index

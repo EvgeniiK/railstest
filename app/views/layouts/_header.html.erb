@@ -7,7 +7,7 @@
     </button>
     <a class="navbar-brand" href=<%= root_path %>>Trains On Rails</a>
     <div class="navbar-collapse collapse navbar-responsive-collapse sides">
-      <ul class="nav navbar-nav left">
+      <ul class="nav navbar-nav right">
         <% if current_user.present? %>
           <li><%= link_to 'sign_out', destroy_user_session_path, method: :delete %></li>
         <% else %>
