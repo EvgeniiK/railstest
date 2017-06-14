@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614142531) do
+ActiveRecord::Schema.define(version: 20170614143314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "form"
+    t.date     "to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "staffs", force: :cascade do |t|
     t.string   "position"
@@ -27,6 +34,14 @@ ActiveRecord::Schema.define(version: 20170614142531) do
     t.datetime "updated_at", null: false
     t.index ["station_id"], name: "index_staffs_on_station_id", using: :btree
     t.index ["train_id"], name: "index_staffs_on_train_id", using: :btree
+  end
+
+  create_table "stations", force: :cascade do |t|
+    t.string   "city"
+    t.string   "state"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trains", force: :cascade do |t|
