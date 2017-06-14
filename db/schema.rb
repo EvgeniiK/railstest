@@ -20,10 +20,12 @@ ActiveRecord::Schema.define(version: 20170614150921) do
     t.time     "dispatch"
     t.integer  "station_id"
     t.integer  "schedule_id"
+    t.integer  "train_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["schedule_id"], name: "index_positions_on_schedule_id", using: :btree
     t.index ["station_id"], name: "index_positions_on_station_id", using: :btree
+    t.index ["train_id"], name: "index_positions_on_train_id", using: :btree
   end
 
   create_table "schedules", force: :cascade do |t|

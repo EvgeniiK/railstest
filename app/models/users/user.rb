@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   def admin?
-    user.type == 'Admin'
+    type == 'Admin'
   end
 end

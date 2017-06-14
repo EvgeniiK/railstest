@@ -11,5 +11,9 @@ class PagesController < ApplicationController
 
   def admin
     authorize! :admin, current_user.admin?
+    @schedules = Schedule.all
+    @staffs = Staff.all
+    @stations = Station.all
+    @trains = Train.all
   end
 end

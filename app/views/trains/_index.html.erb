@@ -40,7 +40,8 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<% if current_user.try(:admin?) %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
             new_train_path,
             :class => 'btn btn-primary' %>
+<% end %>
