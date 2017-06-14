@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Trains</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trains On Rails</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+  <%= render 'layouts/header' %>
   <body>
-    <%= yield %>
+    <div class="wrappper">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-0 col-md-0 col-xl-2"></div>
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xl-8">
+            <%= yield %>
+          </div>
+          <div class="col-lg-0 col-md-0 col-xl-2"></div>
+        </div>
+      </div>
+    </div>
   </body>
+  <%= render 'layouts/footer' %>
 </html>
+

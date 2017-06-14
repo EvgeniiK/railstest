@@ -2,16 +2,14 @@ default: &default
   adapter: postgresql
   encoding: utf8
   pool: 5
-  username:
-  password:
 
 development:
   <<: *default
-  database: trains_development
-
-test:
-  <<: *default
-  database: trains_test
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
 
 production:
   adapter: postgresql
