@@ -3,8 +3,13 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, only: :admin
 
   def home
+    @schedules = Schedule.all
+    @staffs = Staff.all
+    @stations = Station.all
+    @trains = Train.all
   end
+
   def admin
-    authorize! :admin, current_user.type == 'Admin'
+    authorize! :admin, current_user.admin?
   end
 end

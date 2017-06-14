@@ -16,9 +16,8 @@ ActiveRecord::Schema.define(version: 20170614150921) do
   enable_extension "plpgsql"
 
   create_table "positions", force: :cascade do |t|
-    t.string   "arrival"
-    t.string   "dispatch"
-    t.datetime "to"
+    t.time     "arrival"
+    t.time     "dispatch"
     t.integer  "station_id"
     t.integer  "schedule_id"
     t.datetime "created_at",  null: false
@@ -28,8 +27,8 @@ ActiveRecord::Schema.define(version: 20170614150921) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.string   "form"
-    t.date     "to"
+    t.integer  "hours"
+    t.integer  "minutes"
     t.integer  "train_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -89,10 +88,13 @@ ActiveRecord::Schema.define(version: 20170614150921) do
   create_table "wagons", force: :cascade do |t|
     t.string   "type"
     t.integer  "seats"
+    t.integer  "quantity"
     t.integer  "train_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["train_id"], name: "index_wagons_on_train_id", using: :btree
   end
 
+  add_foreign_key "positions", "schedules"
+  add_foreign_key "positions", "stations"
 end

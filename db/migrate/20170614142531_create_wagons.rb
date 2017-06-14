@@ -3,7 +3,8 @@ class CreateWagons < ActiveRecord::Migration[5.0]
     create_table :wagons do |t|
       t.string :type
       t.integer :seats
-      t.belongs_to :train
+      t.integer :quantity
+      t.belongs_to :train, index: true
 
       t.timestamps
     end

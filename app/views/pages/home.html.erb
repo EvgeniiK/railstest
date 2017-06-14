@@ -19,20 +19,32 @@
 <div class="row">
   <div class="container">
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab">About us</a></li>
-      <li><a data-toggle="tab">Shedules</a></li>
-      <li><a data-toggle="tab">Stations</a></li>
-      <li><a data-toggle="tab">Trains</a></li>
-      <li><a data-toggle="tab">Stuff</a></li>
+      <li class="active"><a data-toggle="tab" href="#about_us">About us</a></li>
+      <li><a data-toggle="tab" href="#schedules">Schedules</a></li>
+      <li><a data-toggle="tab" href="#stations">Stations</a></li>
+      <li><a data-toggle="tab" href="#trains">Trains</a></li>
+      <li><a data-toggle="tab" href="#staff">Staff</a></li>
     </ul>
 
     <div class="tab-content">
-      <div id="hints" class="tab-pane fade in active">
-
+      <div id="about_us" class="tab-pane fade in active">
+        <%= render 'about_us' %>
       </div>
 
-      <div id="articles" class="tab-pane fade">
+      <div id="schedules" class="tab-pane fade">
+        <%= render 'schedules/index' %>
+      </div>
 
+      <div id="stations" class="tab-pane fade">
+        <%= render 'stations/index' %>
+      </div>
+
+      <div id="trains" class="tab-pane fade">
+        <%= render 'trains/index' %>
+      </div>
+
+      <div id="staff" class="tab-pane fade">
+        <%= render 'staffs/index' %>
       </div>
     </div>
   </div>

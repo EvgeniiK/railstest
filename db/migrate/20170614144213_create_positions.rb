@@ -1,11 +1,11 @@
 class CreatePositions < ActiveRecord::Migration[5.0]
   def change
     create_table :positions do |t|
-      t.string :arrival
-      t.string :dispatch
-      t.datetime :to
-      t.belongs_to :station, index: true
-      t.belongs_to :schedule, index: true
+      t.time :arrival
+      t.time :dispatch
+      t.belongs_to :station, index: true, foreign_key: true
+      t.belongs_to :schedule, index: true, foreign_key: true
+      t.belongs_to :train, index: true
 
       t.timestamps
     end

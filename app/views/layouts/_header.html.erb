@@ -6,13 +6,17 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href=<%= root_path %>>Trains On Rails</a>
-    <div class="navbar-collapse collapse navbar-responsive-collapse sides">
-      <ul class="nav navbar-nav right">
-        <% if current_user.present? %>
-          <li><%= link_to 'sign_out', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-        <% end %>
-      </ul>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <div class='sides'>
+        <div class='right'>
+          <ul class="nav navbar-nav">
+            <% if current_user.present? %>
+              <li><%= link_to 'sign_out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
