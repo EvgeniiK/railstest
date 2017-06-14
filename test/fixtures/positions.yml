@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  arrival: MyString
+  dispatch: MyString
+  to: 2017-06-14 17:42:13
+
+two:
+  arrival: MyString
+  dispatch: MyString
+  to: 2017-06-14 17:42:13

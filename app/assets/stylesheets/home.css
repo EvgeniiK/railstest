@@ -22,3 +22,7 @@
   border-top: 1px solid #e7e7e7;
   height: 60px;
 }
+
+.center {
+  text-align: center;
+}

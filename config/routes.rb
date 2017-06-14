@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :positions
   resources :schedules
   resources :stations
   resources :wagons

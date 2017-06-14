@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614143314) do
+ActiveRecord::Schema.define(version: 20170614150921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "positions", force: :cascade do |t|
+    t.string   "arrival"
+    t.string   "dispatch"
+    t.datetime "to"
+    t.integer  "station_id"
+    t.integer  "schedule_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["schedule_id"], name: "index_positions_on_schedule_id", using: :btree
+    t.index ["station_id"], name: "index_positions_on_station_id", using: :btree
+  end
 
   create_table "schedules", force: :cascade do |t|
     t.string   "form"
@@ -40,17 +52,18 @@ ActiveRecord::Schema.define(version: 20170614143314) do
     t.string   "city"
     t.string   "state"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "address"
+    t.string   "phone"
+    t.text     "information"
   end
 
   create_table "trains", force: :cascade do |t|
     t.string   "name"
     t.string   "type"
-    t.integer  "station_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["station_id"], name: "index_trains_on_station_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
