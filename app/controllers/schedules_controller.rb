@@ -9,6 +9,7 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/1
   def show
+    # binding.pry
     @positions = Position.where(schedule_id: @schedule.id) || []
   end
 
@@ -24,6 +25,7 @@ class SchedulesController < ApplicationController
   # POST /schedules
   def create
     @schedule = Schedule.new(schedule_params)
+    binding.pry
 
     if @schedule.save
       redirect_to @schedule, notice: 'Schedule was successfully created.'
@@ -55,6 +57,12 @@ class SchedulesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def schedule_params
-      params.require(:schedule).permit(:hours, :minutes, :train_id)
+      params.require(:schedule).permit(:hours, :minutes, :train_id,
+                                       positions_attributes: [ :id,
+                                                               :arrival,
+                                                               :dispatch,
+                                                               :station_id,
+                                                               :schedule_id,
+                                                               :_destroy])
     end
 end

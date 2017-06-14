@@ -4,5 +4,5 @@ class Position < ApplicationRecord
   belongs_to :train
   has_many :positions
 
-  validates :station, :schedule, presence: true
+  validates :station, presence: true
 end
