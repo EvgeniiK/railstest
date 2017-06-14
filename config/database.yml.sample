@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *default
+  database: trains_development
+
+test:
+  <<: *default
+  database: trains_test
+
+production:
+  adapter: postgresql
+  database: exam[9]
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
