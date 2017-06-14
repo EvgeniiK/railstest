@@ -54,6 +54,6 @@ class TrainsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def train_params
-      params.require(:train).permit(:name)
+      params.require(:train).permit(:name, :type)
     end
 end

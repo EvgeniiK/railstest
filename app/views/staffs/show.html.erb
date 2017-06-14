@@ -10,14 +10,12 @@
   <dd><%= @staff.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:experiance) %>:</strong></dt>
   <dd><%= @staff.experiance %></dd>
+  <dt><strong>Work on station:</strong></dt>
+  <dd><%= @staff.station.try(:name) %></dd>
+  <dt><strong>Work on train:</strong></dt>
+  <dd><%= @staff.train.try(:name) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:about) %>:</strong></dt>
   <dd><%= @staff.about %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:published) %>:</strong></dt>
-  <dd><%= @staff.published %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:station_id) %>:</strong></dt>
-  <dd><%= @staff.station_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:train_id) %>:</strong></dt>
-  <dd><%= @staff.train_id %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

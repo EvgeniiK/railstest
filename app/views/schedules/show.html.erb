@@ -4,12 +4,14 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:form) %>:</strong></dt>
-  <dd><%= @schedule.form %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:to) %>:</strong></dt>
-  <dd><%= @schedule.to %></dd>
+  <dt><strong>Duration:</strong></dt>
+  <dd><%= "#{@schedule.hours}:#{@schedule.minutes}" %></dd>
+  <dt><strong>Train:</strong></dt>
+  <dd><%= link_to @schedule.train.name, train_path(@schedule.train.id) %></dd>
 </dl>
-
+<div class="positions">
+  <%= render 'positions/index' %>
+</div>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               schedules_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

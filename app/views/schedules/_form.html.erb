@@ -16,18 +16,22 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :form, :class => 'control-label col-lg-2' %>
+    <%= f.label :hours, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :form, :class => 'form-control' %>
+      <%= f.text_field :hours, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:form) %>
   </div>
   <div class="form-group">
-    <%= f.label :to, :class => 'control-label col-lg-2' %>
+    <%= f.label :minutes, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :to, :class => 'form-control' %>
+      <%= f.text_field :minutes, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:to) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :minutes, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10 dropdown">
+      <%= f.collection_select :train_id, Train.all, :id, :name, {:class => 'form-control'} %>
+    </div>
   </div>
 
   <div class="form-group">

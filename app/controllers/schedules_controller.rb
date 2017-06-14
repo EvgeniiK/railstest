@@ -9,6 +9,7 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/1
   def show
+    @positions = Position.where(schedule_id: @schedule.id) || []
   end
 
   # GET /schedules/new
@@ -54,6 +55,6 @@ class SchedulesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def schedule_params
-      params.require(:schedule).permit(:form, :to)
+      params.require(:schedule).permit(:hours, :minutes, :train_id)
     end
 end
