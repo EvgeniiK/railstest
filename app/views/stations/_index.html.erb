@@ -9,9 +9,9 @@
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
         <th><%= model_class.human_attribute_name(:id) %></th>
       <% end %>
+      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:city) %></th>
       <th><%= model_class.human_attribute_name(:state) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
     </tr>
   </thead>
   <tbody>
@@ -31,9 +31,9 @@
                         :class => 'btn btn-xs btn-danger' %>
           </td>
         <% end %>
+        <td><%= link_to station.name, station_path(station) %></td>
         <td><%= station.city %></td>
         <td><%= station.state %></td>
-        <td><%= station.name %></td>
       </tr>
     <% end %>
   </tbody>

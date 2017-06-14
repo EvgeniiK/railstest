@@ -9,8 +9,8 @@
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
         <th><%= model_class.human_attribute_name(:id) %></th>
       <% end %>
-      <th><%= model_class.human_attribute_name(:position) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:position) %></th>
       <th><%= model_class.human_attribute_name(:experiance) %></th>
       <th><%= model_class.human_attribute_name(:about) %></th>
     </tr>
@@ -32,8 +32,8 @@
                         :class => 'btn btn-xs btn-danger' %>
           </td>
         <% end %>
+        <td><%= link_to staff.name, staff_path(staff) %></td>
         <td><%= staff.position %></td>
-        <td><%= staff.name %></td>
         <td><%= staff.experiance %></td>
         <td><%= staff.about %></td>
       </tr>

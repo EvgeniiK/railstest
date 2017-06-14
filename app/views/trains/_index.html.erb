@@ -31,7 +31,7 @@
           </td>
           <td><%= link_to train.id, train_path(train) %></td>
         <% end %>
-        <td><%= train.name %></td>
+        <td><%= link_to train.name, train_path(train) %></td>
         <td><%= train.type %></td>
         <% if train.position %>
           <td><%= link_to train.position.station.name, station_path(train.position.station_id) %></td>

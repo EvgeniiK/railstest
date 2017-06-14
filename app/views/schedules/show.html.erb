@@ -12,12 +12,15 @@
 <div class="positions">
   <%= render 'positions/index' %>
 </div>
+
 <%= link_to t('.back', :default => t("helpers.links.back")),
               schedules_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_schedule_path(@schedule), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              schedule_path(@schedule),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<% if current_user.try(:admin?) %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_schedule_path(@schedule), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                schedule_path(@schedule),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+<% end %>
