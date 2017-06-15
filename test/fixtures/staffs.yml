@@ -3,13 +3,13 @@
 one:
   position: MyString
   name: MyString
-  experiance: 1
+  experience: 1
   about: MyText
   published: false
 
 two:
   position: MyString
   name: MyString
-  experiance: 1
+  experience: 1
   about: MyText
   published: false

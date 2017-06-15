@@ -11,7 +11,7 @@
       <% end %>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:position) %></th>
-      <th><%= model_class.human_attribute_name(:experiance) %></th>
+      <th><%= model_class.human_attribute_name(:experience) %></th>
       <th><%= model_class.human_attribute_name(:about) %></th>
     </tr>
   </thead>
@@ -34,7 +34,7 @@
         <% end %>
         <td><%= link_to staff.name, staff_path(staff) %></td>
         <td><%= staff.position %></td>
-        <td><%= staff.experiance %></td>
+        <td><%= staff.experience %></td>
         <td><%= staff.about %></td>
       </tr>
     <% end %>
